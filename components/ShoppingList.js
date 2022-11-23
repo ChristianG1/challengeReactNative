@@ -4,11 +4,11 @@ import { View, Text, StyleSheet } from "react-native";
 // Components
 import { List } from './Shopping/List';
 
-function ShoppingList({ navigation }) {
+function ShoppingList({ navigation, select }) {
   return (
 		<View>
 			<Text style={styles.title}>Tus movimientos:</Text>
-			<List navigation={navigation} />
+			<List navigation={navigation} select={select} />
 		</View>
 	)
 }

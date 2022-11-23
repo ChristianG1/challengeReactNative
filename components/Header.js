@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 function Header({ name = "John Doe", birthday = "10 de Marzo" }){
   return (
 		<View style={styles.container}>
-			<Text style={styles.title}>¡Bienvenido!</Text>
-			<Text style={styles.name}>{ name }</Text>
-			<Text style={styles.birthday}>Cumpleaños: { birthday }</Text>
+			<View style={{ width: "50%" }}>
+				<Text style={styles.title}>¡Bienvenido!</Text>
+				<Text style={styles.name}>{ name }</Text>
+				<Text style={styles.birthday}>Cumpleaños: { birthday }</Text>
+			</View>
 		</View>
 	)
 }
@@ -16,7 +18,9 @@ const styles = StyleSheet.create({
 		backgroundColor: '#B8E0D2',
 		borderBottomLeftRadius: 30,
 		borderBottomRightRadius: 30,
-		padding: 10
+		height: 120,
+		// padding: 10,
+		flexDirection: "row"
 	},
 	title: {
 		fontSize: 24,

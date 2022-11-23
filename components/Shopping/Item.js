@@ -8,8 +8,8 @@ import { useShopping } from '../../hooks/useShopping';
 
 
 function Item({ item }) {
-	const { getShopping, list } = useShopping();
-	const { product, price, image } = item;
+	const { getShopping, list, generateRandom } = useShopping();
+	const { product, price, image, random } = item;
 
 	useEffect(() => {
 		getShopping()
@@ -26,7 +26,7 @@ function Item({ item }) {
 			</View>
 
 			<View style={styles.subComponent }>
-				<Text style={styles.text}> ${ price } </Text>
+				<Text style={styles.text}>{random} $ { price } </Text>
 				<Text style={styles.text}> {">"} </Text>
 			</View>
 		</View>
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
 		padding: 10,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		alignItems: 'center'
+		alignItems: 'center',
+		width: '100%'
 	},
 	subComponent: {
 		flexDirection: 'row',
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
 	text: {
 		color: '#000',
 		fontSize: 14,
-		marginLeft: 10
+		marginLeft: 5
 	},
 	image: {
 		width: 40,
